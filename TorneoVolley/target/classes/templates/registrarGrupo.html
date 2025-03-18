@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/head.html"></head>
+<body>
+<header th:replace="fragments/header.html"></header>
+
+<div class="divBlanco"></div>
+
+<main>
+    <div class="formulario">
+        <h1>REGISTRAR GRUPO</h1>
+        <form th:action="@{/postRegistrarGrupo}" method="post">
+            <label>Nombre:</label>
+            <input type="text" name="nombre" required>
+            <button type="submit">Crear Grupo</button>
+        </form>
+    </div>
+</main>
+<footer th:replace="fragments/footer.html"></footer>
+</body>
+</html>

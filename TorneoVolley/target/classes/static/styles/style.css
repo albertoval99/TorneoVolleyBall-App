@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content:space-between;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f37b02;
+    padding: 0;
+    width: 100%;
+}
+
+
+.logo_cabezera {
+    background-color: white;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+}
+
+.logo_cabezera img {
+    height: 80px;
+}
+
+
+.botones_menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background-color: #f37b02;
+    padding: 20px 0;
+}
+
+.botones_menu button {
+    background-color: #fff;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 180px;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0,0,0,3);
+    background-color: #ffe6cc;
+}
+
+
+
+.divBlanco {
+    background-color: white;
+    height: 30px;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f37b02;
+    flex-grow: 1;
+}
+
+.formulario {
+    background-color: white;
+    padding: 60px;
+    border-radius: 10px;
+    width: 400px;
+
+
+}
+
+.formulario h1 {
+    color: black;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formulario label {
+    font-size: 16px;
+    color: #333;
+}
+
+.formulario input {
+    padding: 10px;
+    border: 2px solid #f37b02;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+select {
+    padding: 10px;
+    border: 2px solid #f37b02;
+    border-radius: 5px;
+    font-size: 16px;
+
+}
+select:focus {
+    outline: none;
+    border-color: #f37b02;
+    background-color: #ffe6cc;
+}
+
+
+
+.formulario button {
+    background-color: #f37b02;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    align-self: center;
+    width: 70%;
+}
+
+
+.formulario-partidos {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    background-color: white;
+    border-radius: 10px;
+    padding:10px;
+    width: 100%;
+    max-width: 900px;
+    max-height:500px;
+
+}
+.formulario-partidos input {
+    height:5px;
+}
+.formulario-partidos select {
+    height:45px;
+}
+
+.boton-partidos{
+    display:flex;
+    justify-content:center;
+
+}
+
+.tituloConSelect {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.tituloConSelect h1 {
+    margin-bottom: 8px;
+}
+
+.equipos {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.formulario-equipo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap:6px;
+}
+
+.formulario-equipo h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formulario-equipo input,
+.formulario-equipo select {
+    padding: 10px;
+    border: 2px solid #f37b02;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.formulario-partidos button {
+    background-color: #f37b02;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    align-self: center;
+    width: 40%;
+    margin-top:20px;
+}
+
+.clasificacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left:25%;
+    padding-right:25%;
+    height:100%;
+
+}
+
+.tituloClasificacion {
+     text-align: center;
+     margin-bottom: 20px;
+}
+
+.formulario-clasificacion {
+     width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+table thead {
+    background-color: #ffe6cc;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ccc;
+}
+
+th {
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+footer {
+    background-color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 15px;
+    color: gray;
+}
+
+
+

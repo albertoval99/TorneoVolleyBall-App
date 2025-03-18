@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/head.html"></head>
+<body>
+<header th:replace="fragments/header.html"></header>
+
+
+    <div class="clasificacion">
+    <form th:action="@{/clasificacion}" method="get" id="form-grupos">
+        <div class="tituloConSelect">
+            <h1>CLASIFICACION</h1>
+            <select name="grupo" id="select-grupo" onchange="cambiarGrupo()">
+
+                <option th:each="grupo :${grupos}" th:text="${grupo.getNombre()}" th:value="${grupo.getNombre()}" th:selected="${grupo.getNombre() == grupoSeleccionado}"></option>
+            </select>
+        </div>
+    </form>
+
+    <div class="formulario-clasificacion">
+        <table>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Pts</th>
+                <th>PtsF</th>
+                <th>PtsC</th>
+                <th>SG</th>
+                <th>PFP</th>
+            </tr>
+            </thead>
+            <tbody id="tablaEquipos">
+            <tr th:each="equipo : ${equipos}">
+                <td th:text="${equipo.nombre}"></td>
+                <td th:text="${equipo.partidosGanados}"></td>
+                <td th:text="${equipo.puntosAFavor}"></td>
+                <td th:text="${equipo.puntosEnContra}"></td>
+                <td th:text="${equipo.setsGanados}"></td>
+                <td th:text="${equipo.puntosFairPlay}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+
+<footer th:replace="fragments/footer.html"></footer>
+
+<script>
+    let intervaloGrupo;
+
+    function cambiarGrupo() {
+        const select = document.getElementById("select-grupo");
+
+        if (select.value !== "") {
+            document.getElementById("form-grupos").submit();
+        }
+    }
+
+    function cambiarGrupoAutomaticamente() {
+        const select = document.getElementById("select-grupo");
+        const opciones = select.options;
+        let currentIndex = select.selectedIndex;
+
+        currentIndex = (currentIndex + 1) % opciones.length;
+        select.selectedIndex = currentIndex;
+        document.getElementById("form-grupos").submit();
+    }
+
+    intervaloGrupo = setInterval(cambiarGrupoAutomaticamente, 5000);
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const select = document.getElementById("select-grupo");
+
+        if (select.value === "" || select.value === null) {
+            select.selectedIndex = 0;
+            cambiarGrupo();
+        }
+    });
+</script>
+
+</body>
+</html>

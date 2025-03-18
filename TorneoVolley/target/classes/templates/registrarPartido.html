@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/head.html"></head>
+<body>
+
+<header th:replace="fragments/header.html"></header>
+
+<div class="divBlanco"></div>
+
+<main>
+<div class="formulario-partidos">
+    <form th:action="@{/registrarPartido}" method="get" id="form-grupos">
+        <div class="tituloConSelect">
+            <h1>REGISTRAR PARTIDO</h1>
+            <select name="grupo" id="select-grupo" onchange="enviarFormulario()">
+                <option value="" selected disabled>Selecciona un grupo</option>
+                <option th:each="grupo :${grupos}" th:text="${grupo.getNombre()}" th:value="${grupo.getNombre()}"></option>
+            </select>
+        </div>
+    </form>
+
+    <script>
+        function enviarFormulario() {
+            // Obtiene el valor seleccionado
+            const select = document.getElementById("select-grupo");
+
+            // Solo envía el formulario si se selecciona una opción diferente al valor vacío
+            if (select.value !== "") {
+                document.getElementById("form-grupos").submit();
+            }
+        }
+    </script>
+
+    <form th:action="@{/postRegistrarPartido}" method="post">
+
+        <div class="equipos">
+
+            <div class="formulario-equipo">
+                <h2>Equipo 1</h2>
+
+                <select id="equipo1" name="equipo1">
+                    <option value="" selected disabled>Selecciona un equipo</option>
+                    <option th:each="equipo :${equipos}" th:text="${equipo.getNombre()}" th:value="${equipo.getNombre()}"></option>
+                </select>
+
+                <label>Puntos Set 1:</label>
+                <input type="number" name="P1S1">
+
+                <label>Puntos Set 2:</label>
+                <input type="number" name="P1S2">
+
+                <label>Puntos Set 3:</label>
+                <input type="number" name="P1S3">
+
+                <label>Puntos Fair Play:</label>
+                <input type="number" name="puntos1FairPlay">
+            </div>
+
+
+
+            <div class="formulario-equipo">
+                <h2>Equipo 2</h2>
+
+
+                <select id="equipo2" name="equipo2">
+                    <option value="" selected disabled>Selecciona un equipo</option>
+                    <option th:each="equipo :${equipos}" th:text="${equipo.getNombre()}" th:value="${equipo.getNombre()}"></option>
+                </select>
+
+                <label>Puntos Set 1:</label>
+                <input type="number" name="P2S1">
+
+                <label>Puntos Set 2:</label>
+                <input type="number" name="P2S2">
+
+                <label>Puntos Set 3:</label>
+                <input type="number" name="P2S3">
+
+                <label>Puntos Fair Play:</label>
+                <input type="number" name="puntos2Fairplay">
+            </div>
+        </div>
+
+        <div class="boton-partidos">
+            <button type="submit">Crear Partido</button>
+        </div>
+
+
+
+
+    </form>
+</div>
+</main>
+
+<footer th:replace="fragments/footer.html"></footer>
+
+</body>
+</html>
